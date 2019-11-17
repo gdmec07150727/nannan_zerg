@@ -14,3 +14,5 @@ Route::rule('banner','api/Banner/swip');
 Route::rule('news','api/News/lst');
 Route::rule('user','api/User/add');
 Route::rule('article','api/Article/lst');
+Route::rule('detail','api/Detail/detail');
+Route::rule('cate','api/Cate/lst');
