@@ -22,6 +22,7 @@ class Aaa{
                 var_dump($wxResult);
             } else {//请求成功
                 $openid = $wxResult['openid'];
+                //session('openid',$openid);
                 echo $openid;
             }
         }

@@ -15,12 +15,19 @@ class test{
             if(move_uploaded_file($_FILES['file']['tmp_name'], $imageSavePath)){
                 echo $imageSavePath;
             }
-  }
-  public function getExeName($fileName){
-        $pathinfo = pathinfo($fileName);
-        return strtolower($pathinfo['extension']);
+    }
+    public function getExeName($fileName){
+            $pathinfo = pathinfo($fileName);
+            return strtolower($pathinfo['extension']);
     }
 }
+ public function tt(){
+    $data = [
+            'txt' => '123',
+            'img' => $all['img'],
+        ];
+    db('test')->insert($data);
+ }
 
  
  
