@@ -28,13 +28,23 @@ class Follow{
 	public function foll(){
 		$data = input('param.');
 		//$fol = db('user')->alias('u')->join('follow f','u.id=f.uid')->where('username',$data['username'])->column('f.fid');
-		$fol = db('follow')->where('uopenid',$data['openid'])->select();
+		$fol = db('follow')->alias('f')->join('user u','f.fopenid=u.openid')->where('uopenid',$data['openid'])->field(['u.*','f.*'])->select();
 		echo json_encode($fol,JSON_UNESCAPED_UNICODE);
 	}
 	public function pass(){
 		$data = input('param.');
 		//$fol = db('user')->alias('u')->join('follow f','u.id=f.fid')->where('username',$data['username'])->column('f.uid');
-		$fol = db('follow')->where('fopenid',$data['openid'])->select();
+		$fol = db('follow')->alias('f')->join('user u','f.uopenid=u.openid')->where('fopenid',$data['openid'])->field(['u.*','f.*'])->select();
+		for($i=0;$i<count($fol);$i++)
+		{
+			if(db('follow')->where('fopenid',$fol[$i]['openid'])->select())
+			{
+				$fol[$i]['isg'] = "true";
+			}else{
+				$fol[$i]['isg'] = "false";
+			}
+			
+		}
 		echo json_encode($fol,JSON_UNESCAPED_UNICODE);
 	}
 	public function guan(){

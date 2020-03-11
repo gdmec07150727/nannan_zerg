@@ -14,7 +14,7 @@ class Tt{
                 $file = $info->getSaveName();
                 $res = ['errCode'=>0,'errMsg'=>'图片上传成功','file'=>$file];
                 $srr = str_replace('\\', '/', $res['file']);
-                $aa = "http://127.0.0.1/nannan/public/static/upload/weixin/".$srr;
+                $aa = "https://hungking.top/nannan/public/static/upload/weixin/".$srr;
                 $cc = stripslashes($aa);
                 $data = [
                 	'txt' => $concent,
@@ -34,7 +34,7 @@ class Tt{
                 $file = $info->getSaveName();
                 $res = ['errCode'=>0,'errMsg'=>'图片上传成功','file'=>$file];
                 $srr = str_replace('\\', '/', $res['file']);
-                $aa = "http://127.0.0.1/nannan/public/static/upload/weixin/".$srr;
+                $aa = "https://hungking.top/nannan/public/static/upload/weixin/".$srr;
                 $cc = stripslashes($aa);
                 $data = [
                 	'txt' => $all['concent'],

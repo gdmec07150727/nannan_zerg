@@ -35,3 +35,4 @@ Route::rule('lstt','api/Article/lstt');
 Route::rule('ara','api/Article/add');
 Route::rule('com_add','api/Commen/add');
 Route::rule('comm','api/Commen/lst');
+Route::rule('com_user','api/Commen/lst_user');
